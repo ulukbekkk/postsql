@@ -1,16 +1,20 @@
-\c - показывает бд мы находимся и через какого юзера
-\c name_of_db - переключается в этой бд
-\dt - поакзывает все таблицы в бд
-\q - выход
+`\c` - показывает бд мы находимся и через какого юзера
+
+`\c` name_of_db - переключается в этой бд
+
+`\dt` - поакзывает все таблицы в бд
+
+`\q` - выход
 
 
-
+```sql
 CREATE DATABASE name_of_db; -создает базу данных
-
+```
+```sql
 CREATE TABLE name_of_table (
     name_of_column1 data_type constrant,
     name_of_column2 data_type constrant
-    
+```    
 ) - создаем таблицу с полями
 
 INSERT INTO name_of_table (name_of_column1, name_of_column2)
