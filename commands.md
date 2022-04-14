@@ -157,7 +157,7 @@ create table doctor_patient (
 
 
 
-## joins
+## joins (теория)
 > JOIN - инструкция, которая позволяет в запросах SELECT брать данные из нескольких таблиц
 
 > INNER JOIN (JOIN) - когда достаются только те записи, у которых есть полная связь
@@ -167,6 +167,38 @@ create table doctor_patient (
 > LEFT JOIN - когда достаются все записи с 'левой' таблицы и так же те записи с полной связью
 
 > RIGHT JOIN - когда достаются все записи с 'правой' таблицы и так же те записи с полной связью
+
+
+## Join (Практиа)
+
+### one to one
+```sql
+select country.title, country.gimn, flag.photo
+from country
+join flag
+on country.flag_id = glag.id;
+```
+
+### one to many
+```sql
+select account.nickname, post.title, post.photo
+from account 
+join post
+on account.id = post.account_id;
+
+
+``` 
+
+### many to many
+```sql
+select doctor.first_name as Doctor, 
+      patient.first_name as Patient
+from doctor
+join doctor_patient as dp on doctor.id = dp.doctor_id
+join patient on patient.id = dp.patient_id;
+
+```
+
 
 ```sql
 SELECT author.first_name, book.title 
