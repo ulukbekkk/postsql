@@ -99,8 +99,9 @@ create table country (
    id serial primary key,
    title varchar(50),
    gimn text,
-   glag_id int unique
-   foreign key fk_country_flag references flag(id)
+   glag_id int unique,
+   constraint fk_country_flag 
+   foreign key flag_id references flag(id)
 )
 ```
 
@@ -117,8 +118,9 @@ CREATE TABLE post(
    title varchar(100),
    body text,
    photo_text,
-   accound_id int 
-   foreign key fk_acc_post references account(id) 
+   accound_id int,
+   constraint fk_acc_post 
+   foreign key accound_id references account(id) 
 );
 
 ```
@@ -140,11 +142,14 @@ Create Table patient (
 
 
 create table doctor_patient (
-   doctor_id int
-   foreign key fk_doctor references doctor(id),
+   doctor_id int,
+   patient_id int,
 
-   patient_id int
-   foreign key fk_patient references patient(id)
+   constraint fk_doctor
+   foreign key doctor_id references doctor(id),
+   
+   constraint fk_patient
+   foreign key patient_id references patient(id)
 );
 
 ```
